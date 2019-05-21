@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on succinctly</title>
+    <link>https://dev.dictummortuum.com/post/</link>
+    <description>Recent content in Posts on succinctly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2019 23:02:59 +0300</lastBuildDate>
+    
+	<atom:link href="https://dev.dictummortuum.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dotfiles management</title>
+      <link>https://dev.dictummortuum.com/post/1/</link>
+      <pubDate>Mon, 20 May 2019 23:02:59 +0300</pubDate>
+      
+      <guid>https://dev.dictummortuum.com/post/1/</guid>
+      <description>I have been managing my dotfiles using the alias below.
+alias dot=&amp;quot;git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME&amp;quot;  Credits to StreakyCobra
+To avoid committing your whole $HOME directory to git, use a .gitignore file:
+# Ignore all files /* # but keep .ssh !.ssh # ignore everything under .ssh, to avoid committing rsa keys, known hosts, etc .ssh/* # but keep your config under vcs !.ssh/config  </description>
+    </item>
+    
+  </channel>
+</rss>

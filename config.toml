@@ -1,0 +1,10 @@
+baseURL = "https://dev.dictummortuum.com"
+languageCode = "en-us"
+title = "succinctly"
+theme = "basics"
+publishdir = "docs"
+
+[params]
+  author = "Dimitris Raviolos"
+  github = "DictumMortuum"
+  linkedin = "dimitrisraviolos"
