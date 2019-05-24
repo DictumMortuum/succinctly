@@ -6,10 +6,21 @@
     <description>Recent content on succinctly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 May 2019 23:02:59 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2019 13:58:56 +0300</lastBuildDate>
     
 	<atom:link href="https://dev.dictummortuum.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>the unofficial BASH strict mode</title>
+      <link>https://dev.dictummortuum.com/post/2/</link>
+      <pubDate>Fri, 24 May 2019 13:58:56 +0300</pubDate>
+      
+      <guid>https://dev.dictummortuum.com/post/2/</guid>
+      <description>The unofficial BASH strict mode is a way to start your BASH scripts to make them more robust and reliable. This is the template:
+#!/bin/bash set -euo pipefail IFS=$&#39;\n\t&#39;  Starting your scripts this way will force good programming habits and will save you from a lot of trouble.
+Credits to aaron maxwel, in this post he goes through all the options in depth.</description>
+    </item>
     
     <item>
       <title>Dotfiles management</title>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.55.6" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
@@ -10,7 +9,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro&display=swap" rel="stylesheet">
 
-        <title>succinctly</title>
+        <title>the unofficial BASH strict mode</title>
 
         
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140613006-1"></script>
@@ -36,7 +35,7 @@
 
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="/">Home</a>
+              <a class="nav-item nav-link " href="/">Home</a>
               <a class="nav-item nav-link" href="https://github.com/DictumMortuum" target="_blank">GitHub</a>
               
               <a class="nav-item nav-link" href="https://www.linkedin.com/in/dimitrisraviolos" target="_blank">LinkedIn</a>
@@ -53,33 +52,25 @@
         </section>
 
 
-<section>
-  <ul class="posts_listing">
-    
-    <li>
-      <div class="row" id="posts">
-        <div class="d-none d-sm-block col-sm-3 date-time-title">
-          <time>24 May 2019</time>
-        </div>
-        <div class="col-sm date-time-title post">
-          <a href="/post/2/">the unofficial BASH strict mode</a>
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="row" id="posts">
-        <div class="d-none d-sm-block col-sm-3 date-time-title">
-          <time>20 May 2019</time>
-        </div>
-        <div class="col-sm date-time-title post">
-          <a href="/post/1/">Dotfiles management</a>
-        </div>
-      </div>
-    </li>
-    
-  </ul>
-</section>
+<div class="blog-post">
+  <h1>the unofficial BASH strict mode</h1>
+  <div class="blog-post-subheader">
+    <time>24 May 2019</time>
+  </div>
+  <div class="blog-post-content">
+    <p>The unofficial BASH strict mode is a way to start your BASH scripts to make them more robust and reliable. This is the template:</p>
+
+<pre><code>#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+</code></pre>
+
+<p>Starting your scripts this way will force good programming habits and will save you from a lot of trouble.</p>
+
+<p>Credits to <a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/">aaron maxwel</a>, in this post he goes through all the options in depth.</p>
+
+  </div>
+</div>
 
       <footer>
         <hr>
