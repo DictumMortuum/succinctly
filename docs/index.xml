@@ -1,47 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>succinctly</title>
-    <link>https://dev.dictummortuum.com/</link>
-    <description>Recent content on succinctly</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 24 May 2019 13:58:56 +0300</lastBuildDate>
-    
-	<atom:link href="https://dev.dictummortuum.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>the unofficial BASH strict mode</title>
-      <link>https://dev.dictummortuum.com/post/2/</link>
-      <pubDate>Fri, 24 May 2019 13:58:56 +0300</pubDate>
-      
-      <guid>https://dev.dictummortuum.com/post/2/</guid>
-      <description>The unofficial BASH strict mode is a way to start your BASH scripts to make them more robust and reliable. This is the template:
-#!/bin/bash set -euo pipefail IFS=$&#39;\n\t&#39;  Starting your scripts this way will force good programming habits and will save you from a lot of trouble.
-Credits to aaron maxwel, in this post he goes through all the options in depth.</description>
-    </item>
-    
-    <item>
-      <title>Dotfiles management</title>
-      <link>https://dev.dictummortuum.com/post/1/</link>
-      <pubDate>Mon, 20 May 2019 23:02:59 +0300</pubDate>
-      
-      <guid>https://dev.dictummortuum.com/post/1/</guid>
-      <description>I have been managing my dotfiles using the alias below.
-alias dot=&amp;quot;git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME&amp;quot;  Credits to StreakyCobra
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>succinctly</title><link>https://dev.dictummortuum.com/</link><description>Recent content on succinctly</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 24 May 2019 13:58:56 +0300</lastBuildDate><atom:link href="https://dev.dictummortuum.com/index.xml" rel="self" type="application/rss+xml"/><item><title>the unofficial BASH strict mode</title><link>https://dev.dictummortuum.com/post/2/</link><pubDate>Fri, 24 May 2019 13:58:56 +0300</pubDate><guid>https://dev.dictummortuum.com/post/2/</guid><description>The unofficial BASH strict mode is a way to start your BASH scripts to make them robust and reliable. This is the template:
+#!/bin/bash set -euo pipefail IFS=$&#39;\n\t&#39; Starting your scripts this way will force good programming habits and will save you from a lot of trouble.
+Credits to aaron maxwel, in this post he goes through all the options in depth.</description></item><item><title>dotfiles management</title><link>https://dev.dictummortuum.com/post/1/</link><pubDate>Mon, 20 May 2019 23:02:59 +0300</pubDate><guid>https://dev.dictummortuum.com/post/1/</guid><description>I have been managing my dotfiles using the alias below.
+alias dot=&amp;quot;git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME&amp;quot; Credits to StreakyCobra
 To avoid committing your whole $HOME directory to git, use a .gitignore file:
-# Ignore all files /* # but keep .ssh !.ssh # ignore everything under .ssh, to avoid committing rsa keys, known hosts, etc .ssh/* # but keep your config under vcs !.ssh/config  </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://dev.dictummortuum.com/about/</link>
-      <pubDate>Mon, 20 May 2019 23:01:39 +0300</pubDate>
-      
-      <guid>https://dev.dictummortuum.com/about/</guid>
-      <description>Senior software engineer @ SG Digital</description>
-    </item>
-    
-  </channel>
-</rss>
+# Ignore all files /* # but keep .ssh !.ssh # ignore everything under .ssh, to avoid committing rsa keys, known hosts, etc .ssh/* # but keep your config under vcs !.ssh/config</description></item><item><title>About</title><link>https://dev.dictummortuum.com/about/</link><pubDate>Mon, 20 May 2019 23:01:39 +0300</pubDate><guid>https://dev.dictummortuum.com/about/</guid><description>Senior software engineer @ SG Digital</description></item></channel></rss>
