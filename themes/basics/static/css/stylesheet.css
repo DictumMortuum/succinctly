@@ -1,5 +1,5 @@
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Hack', monospace;
     margin: auto;
     max-width: 50em;
 }
@@ -25,10 +25,6 @@ body {
 
 #page-title a:hover, .post a:hover {
     text-decoration: underline;
-}
-
-.date-time-title {
-    font-family: 'Source Code Pro', monospace;
 }
 
 .blog-post-content {
@@ -65,7 +61,6 @@ h6  {
 }
 
 code {
-  font-family: 'Source Code Pro', monospace;
   white-space: pre;
   overflow-x: auto;
 }
