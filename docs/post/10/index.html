@@ -1,0 +1,90 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css integrity=sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB crossorigin=anonymous>
+<link rel=stylesheet href=//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css>
+<title>modem-exporter quickstart</title><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140613006-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-140613006-1")</script>
+<link rel=stylesheet href=/css/stylesheet.css>
+</head><body>
+<div class=container-fluid>
+<nav class="navbar navbar-expand-md navbar-light">
+<span class="navbar-brand mb-0 h1"></span>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavAltMarkup aria-controls=navbarNav aria-expanded=false aria-label="Toggle Navigation" name=button>
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarNavAltMarkup>
+<div class=navbar-nav>
+<a class="nav-item nav-link" href=/>Home</a>
+<a class="nav-item nav-link" href=https://github.com/DictumMortuum target=_blank>GitHub</a>
+<a class="nav-item nav-link" href=https://www.linkedin.com/in/dimitrisraviolos target=_blank>LinkedIn</a>
+<a class="nav-item nav-link" href=/about/>About</a>
+</div></div></nav><section id=page-title>
+<h1><a href=/>succinctly</a></h1><span id=author-name>
+<h6><a href=/about/>Dimitris Raviolos</a></h6></span>
+</section><div class=blog-post>
+<h1>modem-exporter quickstart</h1><div class=blog-post-subheader>
+<time>13 Mar 2022</time>
+</div><div class=blog-post-content>
+<p>Checkout modem-exporter and build it:</p><pre tabindex=0><code>/tmp
+❯ git clone git@github.com:DictumMortuum/modem-exporter.git
+Cloning into &#39;modem-exporter&#39;...
+remote: Enumerating objects: 131, done.
+remote: Counting objects: 100% (131/131), done.
+remote: Compressing objects: 100% (73/73), done.
+remote: Total 131 (delta 58), reused 112 (delta 42), pack-reused 0
+Receiving objects: 100% (131/131), 42.01 KiB | 531.00 KiB/s, done.
+Resolving deltas: 100% (58/58), done.
+
+/tmp
+❯ cd modem-exporter
+
+/tmp/modem-exporter master
+❯ make build
+gofmt -s -w .
+go build -trimpath -buildmode=pie -mod=readonly -modcacherw -ldflags=&#34;-s -w&#34;
+</code></pre><p>Scp the modem-exporter binary to your server and copy the sample configuration/systemd file:</p><pre tabindex=0><code>/tmp/modem-exporter master
+❯ scp modem-exporter sol:/tmp
+modem-exporter                                                                              100%   12MB  93.5MB/s   00:00
+
+/tmp/modem-exporter master
+❯ scp assets/modem_exporter.yaml sol:/tmp
+modem_exporter.yaml                                                                         100%   51     9.0KB/s   00:00
+
+/tmp/modem-exporter master
+❯ scp assets/prometheus-modem-exporter.service sol:/tmp
+prometheus-modem-exporter.service                                                           100%  273    40.7KB/s   00:00
+</code></pre><p>Copy the files to the appropriate directories on the server:</p><pre tabindex=0><code>dimitris@sol ~
+❯ sudo cp /tmp/prometheus-modem-exporter.service /usr/lib/systemd/system/prometheus-modem-exporter.service
+
+dimitris@sol ~
+❯ sudo cp /tmp/modem-exporter /usr/local/bin
+
+dimitris@sol ~
+❯ sudo cp /tmp/modem_exporter.yaml /etc
+</code></pre><p>Configure the modem exporter & enable and start the service:</p><pre tabindex=0><code>dimitris@sol ~
+❯ cat /etc/modem_exporter.yaml
+host: &lt;&lt; IP of your modem &gt;&gt;
+modem: &lt;&lt; one of: TD5130, SpeedportPlus or DG8245V-10 &gt;&gt;
+port: &lt;&lt; port of the exporter, e.g. 9618 &gt;&gt;
+user: &lt;&lt; admin username for the modem &gt;&gt;
+pass: &lt;&lt; admin password for the modem &gt;&gt;
+voip: &lt;&lt; if your modem is VDSL, then the WAN name of the VOIP &gt;&gt;
+</code></pre><p>Install prometheus & configure it:</p><pre tabindex=0><code>dimitris@sol ~
+❯ cat /etc/prometheus/prometheus.yml
+scrape_configs:
+  - job_name: &#34;modem&#34;
+    static_configs:
+        - targets:
+          - &#34;sol.dictummortuum.com:9618&#34;
+</code></pre><p>Done! Now you should be able to open your prometheus instance and you should be able to see the metrics.</p></div></div><footer>
+<hr>
+<small>
+&copy; 2022 Dimitris Raviolos.
+Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> using the <a href=https://github.com/arjunkrishnababu96/basics target=_blank>Basics</a> theme.
+</small>
+</footer></div><script src=https://code.jquery.com/jquery-3.3.1.slim.min.js integrity=sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js integrity=sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T crossorigin=anonymous></script>
+</body></html>
